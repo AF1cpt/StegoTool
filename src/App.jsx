@@ -43,12 +43,6 @@ function App() {
               Instant encoding and decoding. No server delays.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition duration-300">
-            <h4 className="text-xl font-bold text-gray-800 mb-2">🎨 Elegant</h4>
-            <p className="text-gray-600 text-sm">
-              Apple-inspired design. Clean, responsive, and delightful to use.
-            </p>
-          </div>
         </section>
 
         <footer className="mt-20 text-center text-sm text-gray-400">
