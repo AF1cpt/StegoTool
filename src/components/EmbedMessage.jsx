@@ -6,10 +6,16 @@ export default function EmbedMessage() {
   const [message, setMessage] = useState('');
   const [output, setOutput] = useState(null);
 
-  const handleEmbed = async () => {
-    if (!image || !message) return;
-    const result = await embedMessageInImage(image, message);
-    setOutput(result);
+  const handleEmbed = () => {
+    console.log('🔍 handleEmbed called', { image, message });
+    if (!image || !message) {
+      console.warn('⚠️ Missing image or message, cannot embed');
+      return;
+    }
+    embedMessageInImage(image, message, (result) => {
+      console.log('✅ embed callback result URL:', result);
+      setOutput(result);
+    });
   };
 
   return (
@@ -19,7 +25,10 @@ export default function EmbedMessage() {
       <input
         type="file"
         accept="image/*"
-        onChange={(e) => setImage(e.target.files[0])}
+        onChange={(e) => {
+          console.log('📁 file selected:', e.target.files[0]);
+          setImage(e.target.files[0]);
+        }}
         className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:font-semibold file:bg-primary file:text-white hover:file:opacity-90"
       />
 
@@ -28,7 +37,10 @@ export default function EmbedMessage() {
         rows={4}
         placeholder="Enter your secret message here..."
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={(e) => {
+          console.log('✏️ message changed:', e.target.value);
+          setMessage(e.target.value);
+        }}
       />
 
       <button
@@ -42,6 +54,7 @@ export default function EmbedMessage() {
         <a
           href={output}
           download="stego-image.png"
+          onClick={() => console.log('⬇️ Download link clicked')}
           className="block text-sm text-blue-600 underline hover:text-blue-800 mt-2"
         >
           Download Embedded Image

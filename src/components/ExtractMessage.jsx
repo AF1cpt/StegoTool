@@ -5,35 +5,24 @@ export default function ExtractMessage() {
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState('');
 
-  const handleExtract = async () => {
-    if (!image) return;
-    const result = await extractMessageFromImage(image);
-    setMessage(result);
+  const handleExtract = () => {
+    if (image) {
+      extractMessageFromImage(image, setMessage);
+    }
   };
 
   return (
-    <div className="space-y-5">
-      <h2 className="text-2xl font-semibold text-primary">Extract Secret Message</h2>
-
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => setImage(e.target.files[0])}
-        className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:font-semibold file:bg-primary file:text-white hover:file:opacity-90"
-      />
-
+    <div className="p-6 bg-white shadow-xl rounded-2xl w-full max-w-md mx-auto space-y-4 mt-8">
+      <h2 className="text-xl font-semibold text-gray-800">Extract Secret Message</h2>
+      <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} className="w-full" />
       <button
         onClick={handleExtract}
-        className="bg-accent text-white px-5 py-2 rounded-lg hover:opacity-90 transition font-medium"
+        className="bg-black text-white px-4 py-2 rounded hover:opacity-80 transition"
       >
-        Extract Message
+        Extract
       </button>
 
-      {message && (
-        <div className="p-3 mt-2 border border-gray-300 rounded-lg bg-light text-gray-700 text-sm whitespace-pre-wrap">
-          {message}
-        </div>
-      )}
+      {message && <p className="text-gray-700 mt-4 whitespace-pre-wrap">{message}</p>}
     </div>
   );
 }
