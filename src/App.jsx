@@ -13,14 +13,15 @@ function App() {
             Securely hide and reveal messages in images — 100% client-side
           </p>
         </header>
-
+        <h1 className="text-3xl font-bold underline text-blue-500">
+            StegoTool Frontend Branch 🚀
+        </h1>
         <div className="bg-white shadow-lg rounded-3xl p-6">
           <main className="flex flex-col lg:flex-row justify-center items-stretch gap-8">
             <EmbedMessage />
             <ExtractMessage />
           </main>
         </div>
-
         <section className="mt-16 max-w-4xl mx-auto text-center bg-white rounded-2xl shadow-inner p-8">
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">💡 What is Steganography?</h3>
           <p className="text-gray-600 text-sm leading-relaxed">
