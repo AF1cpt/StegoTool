@@ -46,14 +46,8 @@ function App() {
 
         <footer className="mt-20 text-center text-sm text-gray-400">
           <p>Open mic\\Aquarius III -logic </p>
-          <a href="https://github.com/AF1cpt/StegoTool" className="text-blue-500 hover:underline">GitHub</a>
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/ra11969ZZ8k" 
-                   title="Luffy punches a Celestial Dragon HD!!!" 
-                   frameBorder="0" 
-                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                   referrerPolicy="strict-origin-when-cross-origin" 
-                   allowFullScreen>
-             </iframe>
+          <iframe width="950" height="450" src="https://www.youtube.com/embed/ra11969ZZ8k" title="Luffy punches a Celestial Dragon HD!!!" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </footer>
       </div>
     </div>
